@@ -6,12 +6,13 @@
 /*   By: cgross-s <cgross-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 21:30:09 by cgross-s          #+#    #+#             */
-/*   Updated: 2025/09/01 19:57:38 by cgross-s         ###   ########.fr       */
+/*   Updated: 2025/09/02 20:32:25 by cgross-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
+// Cria/abre output.txt
 void	setup_outfile(t_pipex *pipex)
 {
 	int	outfile_index;
@@ -29,6 +30,7 @@ void	setup_outfile(t_pipex *pipex)
 	}
 }
 
+// Abre input.txt
 void	setup_infile(t_pipex *pipex)
 {
 	if (ft_strncmp(pipex->argv[INFILE], "/dev/urandom", 12) == 0)
