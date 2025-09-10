@@ -14,7 +14,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	ft_atoi.c ft_isprint.c ft_putchar_fd.c \
+SRCS =	ft_atoi.c ft_isprint.c ft_putchar_fd.c ft_strcmp.c \
 		ft_striteri.c ft_strnstr.c ft_putnbr.c ft_putnbr_base.c ft_putptr.c \
 		ft_bzero.c ft_itoa.c ft_putendl_fd.c ft_strjoin.c ft_strrchr.c \
 		ft_calloc.c ft_memchr.c ft_putnbr_fd.c ft_strlcat.c ft_strtrim.c \
@@ -22,7 +22,7 @@ SRCS =	ft_atoi.c ft_isprint.c ft_putchar_fd.c \
 		ft_isalpha.c ft_memcpy.c ft_split.c ft_strlen.c ft_tolower.c \
 		ft_isascii.c ft_memmove.c ft_strchr.c ft_strmapi.c ft_toupper.c \
 		ft_isdigit.c ft_memset.c ft_strdup.c ft_strncmp.c ft_putstr.c \
-		ft_putchar.c ft_atol.c ft_atof.c ft_realloc.c ft_strndup.c
+		ft_putchar.c ft_atol.c ft_atof.c ft_realloc.c ft_strndup.c ft_strcmp.c
 
 OBJS = $(SRCS:.c=.o)
 

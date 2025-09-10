@@ -6,7 +6,7 @@
 /*   By: cgross-s <cgross-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:16:41 by cgross-s          #+#    #+#             */
-/*   Updated: 2025/09/01 22:10:53 by cgross-s         ###   ########.fr       */
+/*   Updated: 2025/09/04 16:37:05 by cgross-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ typedef struct s_pipex
 	char	**paths_cmds;	// Array de paths para todos os comandos
 	char	***args_cmds;	// Array de arrays de argumentos
 	int		cmd_count;		// Número total de comandos
-	char	**argv;			// Adicionar argv à estrutura
+	char	*input_file;
+	char	*output_file;
+	char	**commands;	// Array de strings de comandos ("cat", "grep banana")
 }	t_pipex;
 
 /*child_process.c*/
@@ -67,11 +69,16 @@ int		ft_error(char *error_message);
 /*ft_exec_utils.c*/
 int		create_pipes(int *pipes, int pipe_count);
 void	cleanup_pipes(int *pipes, int pipes_created);
-//void	execute_commands(t_pipex *pipex, int *pipes, pid_t *pids, char **envp);
+char	**build_command_args(char **argv, int *arg_idx);
+// char	*join_arguments(int argc, char **argv);
+// char	**split_commands(char *command_line);
+
+//int		count_commands_from_argv(int argc, char **argv);
+int		count_commands_from_argv(int argc, char **argv, char *delimiter);
+char	**extract_commands_from_argv(int argc, char **argv, char *delimiter);
+char	*join_command_args(char **argv, int start, int end);
 
 /*ft_exec.c*/
-//int		create_pipes(int *pipes, int pipe_count);
-//void	cleanup_pipes(int *pipes, int pipes_created);
 void	execute_commands(t_pipex *pipex, int *pipes, pid_t *pids, char **envp);
 void	wait_for_children(pid_t *pids, int count);
 void	handle_single_command(t_pipex *pipex, char **envp);
@@ -82,6 +89,7 @@ void	ft_exec(t_pipex *pipex, char **envp);
 char	*get_string(const char *s);
 void	clean_words(int words, char **array);
 char	**ft_split_mod(char *s);
+// int		count_commands(char *command_line);
 
 /*ft_split_utils.c*/
 int		ft_countword(const char *input);
@@ -101,7 +109,7 @@ void	handle_urandom(void);
 
 /*main.c*/
 void	check_args(t_pipex *pipex, char **envp);
-void	init_pipex(t_pipex *pipex, int cmd_count, char **argv);
+//void	init_pipex(t_pipex *pipex, int cmd_count, char **argv);
 
 /*parsing_utils.c*/
 int		is_only_spaces(const char *str);

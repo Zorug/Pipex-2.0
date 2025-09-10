@@ -6,41 +6,11 @@
 /*   By: cgross-s <cgross-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:12:04 by cgross-s          #+#    #+#             */
-/*   Updated: 2025/09/01 22:13:23 by cgross-s         ###   ########.fr       */
+/*   Updated: 2025/09/02 20:48:14 by cgross-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-
-/*int	create_pipes(int *pipes, int pipe_count)
-{
-	int	i;
-
-	i = 0;
-	while (i < pipe_count)
-	{
-		if (pipe(pipes + i * 2) == -1)
-		{
-			perror("pipe");
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-void	cleanup_pipes(int *pipes, int pipes_created)
-{
-	int	j;
-
-	j = 0;
-	while (j < pipes_created * 2)
-	{
-		close(pipes[j]);
-		j++;
-	}
-	free(pipes);
-}*/
 
 void	execute_commands(t_pipex *pipex, int *pipes, pid_t *pids, char **envp)
 {

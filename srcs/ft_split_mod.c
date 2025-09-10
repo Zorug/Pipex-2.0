@@ -6,7 +6,7 @@
 /*   By: cgross-s <cgross-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 23:00:50 by cgross-s          #+#    #+#             */
-/*   Updated: 2025/08/27 20:35:36 by cgross-s         ###   ########.fr       */
+/*   Updated: 2025/09/03 21:35:32 by cgross-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,26 @@ char	**ft_split_mod(char *s)
 	ft_free_array(array);
 	return (new_array);
 }
+
+/* int	count_commands(char *command_line)
+{
+	int	count;
+	int	in_quotes;
+	int	i;
+	
+	count = 1; // Sempre pelo menos 1 comando
+	in_quotes = 0;
+	i = 0;
+	
+	while (command_line[i])
+	{
+		if (command_line[i] == '"' || command_line[i] == '\'')
+			in_quotes = !in_quotes;
+		
+		if (command_line[i] == '|' && !in_quotes)
+			count++;
+		
+		i++;
+	}
+	return (count);
+} */
